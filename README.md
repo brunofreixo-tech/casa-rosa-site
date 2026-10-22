@@ -22,4 +22,4 @@ Abra http://localhost:8000.
 
 ## Publicação
 
-Cloudflare Pages, com diretório de saída `site` e sem comando de build. **Ainda não configurado.**
+Publicação: Hostinger. Todo push na main que altera site/ dispara a Action deploy-hostinger, que envia o conteúdo de site/ por FTP para o public_html. Secrets necessários: FTP_SERVER, FTP_USERNAME, FTP_PASSWORD; variável: FTP_DIR. Deploy manual: aba Actions → Deploy Hostinger → Run workflow.

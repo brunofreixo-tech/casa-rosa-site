@@ -1,0 +1,29 @@
+name: Deploy Hostinger
+on:
+  push:
+    branches: [main]
+    paths: ["site/**", ".github/workflows/deploy-hostinger.yml"]
+  workflow_dispatch:
+concurrency:
+  group: deploy-hostinger
+  cancel-in-progress: false
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Enviar site/ por FTP
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
+        with:
+          server: ${{ secrets.FTP_SERVER }}
+          username: ${{ secrets.FTP_USERNAME }}
+          password: ${{ secrets.FTP_PASSWORD }}
+          protocol: ftps
+          port: 21
+          local-dir: ./site/
+          server-dir: ${{ vars.FTP_DIR }}
+          exclude: |
+            **/.git*
+            **/.git*/**
+            **/.DS_Store
+            assets/_nao-usados/**
