@@ -11,6 +11,14 @@ Export do ChatGPT Sites em 22/10/2026 (`Casa_Rosa_site_export_portatil.zip`). O 
 - `site/` — é o que vai publicado. Site estático, sem build: `index.html` + `assets/`.
   - `site/assets/_nao-usados/` — arquivos do export que o `index.html` não referencia.
 - `docs/` — documentação interna. Não é publicada.
+  - `docs/originais/` — imagens e fontes em resolução original (PNG/JPEG/TTF). O site publica versões otimizadas (WebP/WOFF2) geradas a partir delas; para trocar uma imagem, edite o original e gere o WebP de novo.
+
+## Convenções
+
+- Imagens: WebP, largura máxima ~2× o tamanho exibido, sempre com `width`/`height` no `<img>` e `loading="lazy"` abaixo da primeira dobra.
+- Fontes: WOFF2 locais (licença OFL em `site/assets/fonts/`).
+- `site/.htaccess`: redireciona www → sem www, compressão e cache (HTML revalida sempre; imagens 30 dias; fontes 1 ano).
+- SEO/compartilhamento: `og-image.jpg` (1200×630), favicons, `robots.txt`, `sitemap.xml` e dados estruturados (LocalBusiness) no `<head>`.
 
 ## Testar localmente
 

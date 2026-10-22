@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://casarosasp.com.br/sitemap.xml
