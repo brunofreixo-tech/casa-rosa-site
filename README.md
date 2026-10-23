@@ -20,6 +20,8 @@ Export do ChatGPT Sites em 22/10/2026 (`Casa_Rosa_site_export_portatil.zip`). O 
 - `site/.htaccess`: redireciona www → sem www, compressão e cache (HTML revalida sempre; imagens 30 dias; fontes 1 ano).
 - SEO/compartilhamento: `og-image.jpg` (1200×630), favicons, `robots.txt`, `sitemap.xml` e dados estruturados (LocalBusiness) no `<head>`.
 
+- Analytics: Umami Cloud (sem cookies, sem banner LGPD), só conta visitas em `casarosasp.com.br` (`data-domains`). Cliques são contados por `data-umami-event` nos links: `whatsapp-grade`, `whatsapp-oficina`, `whatsapp-mindfulness`, `whatsapp-contato`, `whatsapp-rodape`, `instagram-contato`, `instagram-rodape`. Link novo de WhatsApp ou Instagram deve levar o atributo.
+
 ## Testar localmente
 
 ```sh
