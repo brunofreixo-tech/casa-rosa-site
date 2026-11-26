@@ -28,6 +28,7 @@
 <IfModule mod_mime.c>
   AddType font/woff2 .woff2
   AddType image/webp .webp
+  AddType application/manifest+json .webmanifest
 </IfModule>
 
 <IfModule mod_headers.c>
